@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "ES2023"
+    ],
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "skipLibCheck": true,
+    /* Bundler mode */
+    "moduleResolution": "Bundler",
+    "types": [
+      "@cloudflare/workers-types/2023-07-01"
+    ],
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true
+  },
+  "exclude": [
+    "test"
+  ],
+  "include": [
+    "vite.config.mts",
+    "worker-configuration.d.ts",
+    "src/**/*.ts",
+    "common/**/*.ts"
+  ]
+}
