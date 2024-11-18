@@ -1,17 +1,15 @@
 import { z } from 'zod';
 
-export type Permission =
-    'read:users' |
-    'write:users' |
-    'read:tasks' |
-    'write:tasks';
-
-export const PermissionSchema = z.enum([
+const permissions = [
     'read:users',
     'write:users',
     'read:tasks',
     'write:tasks',
-]);
+] as const;
+
+export type Permission = typeof permissions[number];
+
+export const PermissionSchema = z.enum(permissions);
 
 export type User = {
     id: number;
