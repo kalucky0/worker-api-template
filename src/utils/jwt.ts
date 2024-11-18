@@ -2,7 +2,7 @@ import { sign } from 'hono/jwt';
 
 import { JwtPayload, User } from '../types';
 
-export const createJwt = (user: User): Promise<string> => {
+export const createJwt = (user: User, env: Env): Promise<string> => {
     return sign(
         {
             id: user.id,
@@ -10,6 +10,6 @@ export const createJwt = (user: User): Promise<string> => {
             email: user.email,
             permissions: user.permissions,
         } satisfies JwtPayload,
-        'sample-secret',
+        env.JWT_SECRET,
     );
 };

@@ -6,7 +6,7 @@ import { createUser, getUserByEmail } from '../database';
 import { database } from '../middleware';
 import { createJwt, hashPassword, verifyPassword } from '../utils';
 
-const app = new Hono();
+const app = new Hono<{Bindings: Env}>();
 
 app.post(
     '/login',
@@ -30,7 +30,7 @@ app.post(
             return c.json({ error: 'Invalid password' });
         }
 
-        const jwt = await createJwt(user);
+        const jwt = await createJwt(user, c.env);
         return c.json({ jwt });
     },
 );
@@ -63,7 +63,7 @@ app.post(
             return c.json({ error: 'Failed to create user' });
         }
 
-        const jwt = await createJwt(user);
+        const jwt = await createJwt(user, c.env);
         return c.json({ jwt });
     },
 );
