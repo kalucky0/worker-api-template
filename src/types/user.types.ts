@@ -17,7 +17,7 @@ export type User = {
     email: string;
     password: string;
     permissions: Permission[];
-    createdAt: string;
+    createdAt: Date;
 };
 
 export type JwtPayload = {
