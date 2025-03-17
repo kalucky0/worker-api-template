@@ -3,6 +3,7 @@
     "explorer.fileNesting.expand": false,
     "explorer.fileNesting.patterns": {
         "*.tsx": "$(capture).module.scss, $(capture).scss, $(capture).module.css, $(capture).css",
+        "wrangler.jsonc": "*.config.ts, *.config.js, *.config.mjs, *.config.json, worker-configuration.d.ts",
     },
     "files.exclude": {
         "**/logs": true,

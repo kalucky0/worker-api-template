@@ -1,0 +1,30 @@
+{
+    "$schema": "node_modules/wrangler/config-schema.json",
+    "name": "taxi",
+    "main": "src/index.ts",
+    "compatibility_date": "2024-10-22",
+    "compatibility_flags": [
+        "nodejs_compat"
+    ],
+    "observability": {
+        "enabled": true
+    },
+    "assets": {
+        "directory": "./dist",
+        "binding": "ASSETS"
+    },
+    "route": {
+        "pattern": "example.com",
+        "custom_domain": true
+    },
+    "d1_databases": [
+        {
+            "binding": "DB",
+            "database_name": "database",
+            "database_id": "id"
+        }
+    ],
+    "limits": {
+        "cpu_ms": 30
+    }
+}
